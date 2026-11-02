@@ -70,5 +70,6 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/disenio_de_sistemas_devops:${GITHUB_SHA::7}
           docker push ${{ secrets.DOCKER_USERNAME }}/disenio_de_sistemas_devops:latest
+
       - name: Disparar despliegue en Render
         run: curl -s -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
